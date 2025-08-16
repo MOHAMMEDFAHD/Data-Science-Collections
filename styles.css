@@ -1,0 +1,214 @@
+:root{
+  --bg: #0b0f17;
+  --panel: #121826;
+  --panel-2: #0f1522;
+  --text: #e4e8f1;
+  --muted: #a7b0c0;
+  --brand: #7c5cff;
+  --brand-2:#00d4ff;
+  --ok: #36d399;
+  --warn:#fbbf24;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg: #f6f8fc;
+    --panel: #ffffff;
+    --panel-2:#f3f6fb;
+    --text:#0b1020;
+    --muted:#4b5568;
+    --brand:#5b3df5;
+    --brand-2:#0ea5e9;
+    --ok:#16a34a;
+    --warn:#d97706;
+    --shadow: 0 10px 25px rgba(14,30,80,.08);
+  }
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.65;
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(124,92,255,.25), transparent 60%) , var(--bg);
+  color: var(--text);
+}
+
+.container{ max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.site-header{
+  padding: 64px 0 24px;
+  position: relative;
+}
+.site-header h1{
+  font-size: clamp(28px, 4vw, 48px);
+  margin: 0 0 8px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+.subtitle{
+  margin: 0 0 20px;
+  color: var(--muted);
+  max-width: 900px;
+}
+.cta-row{ display:flex; gap:12px; align-items:center; flex-wrap: wrap; }
+.btn{
+  display:inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+}
+.btn.primary{
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: white;
+}
+.btn.ghost{
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(127, 140, 171, .35);
+}
+.gradient-sep{
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--brand) , var(--brand-2), transparent);
+  opacity: .6;
+  margin-top: 32px;
+}
+
+/* Layout */
+.layout{
+  display:grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  padding: 28px 20px 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.sidebar{
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  height: fit-content;
+}
+.toc{
+  background: var(--panel);
+  border: 1px solid rgba(127,140,171,.15);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.toc h3{
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+.toc ol{ margin:0; padding:0 0 0 16px; }
+.toc a{
+  color: var(--text);
+  text-decoration: none;
+}
+.toc a:hover{ color: var(--brand-2); }
+
+/* Content */
+.content{
+  min-width: 0;
+}
+.intro-cards{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.card{
+  background: var(--panel);
+  border: 1px solid rgba(127,140,171,.15);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+}
+.card.stat h4{
+  margin: 0 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--muted);
+}
+.card.stat p{ margin:0; font-weight:600; }
+
+.phase{
+  margin-top: 28px;
+}
+.phase-head{
+  margin-bottom: 16px;
+}
+.phase-chip{
+  display:inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  box-shadow: var(--shadow);
+}
+.phase h2{
+  margin: 8px 0 6px;
+  font-size: clamp(20px, 3vw, 28px);
+}
+.phase p{ color: var(--muted); margin:0; }
+
+.grid.two{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.check, .bullets{
+  margin: 8px 0 0 0;
+}
+.check li, .bullets li{
+  margin: 8px 0 0 0;
+}
+.check li::marker{ content: "✔ "; color: var(--ok); }
+.bullets li::marker{ color: var(--brand-2); }
+
+details.card{
+  margin-top: 12px;
+}
+details.card summary{
+  cursor: pointer;
+  font-weight: 700;
+}
+details.card[open]{
+  outline: 1px solid rgba(127,140,171,.25);
+}
+
+.site-footer{
+  margin-top: 28px;
+  text-align:center;
+  color: var(--muted);
+  padding: 16px 0 0;
+  border-top: 1px dashed rgba(127,140,171,.25);
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .layout{
+    grid-template-columns: 1fr;
+  }
+  .sidebar{
+    position: static;
+    order: -1;
+  }
+  .intro-cards{
+    grid-template-columns: 1fr;
+  }
+  .grid.two{
+    grid-template-columns: 1fr;
+  }
+}
