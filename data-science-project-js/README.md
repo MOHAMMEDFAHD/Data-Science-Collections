@@ -1,6 +1,3 @@
-Here's your full content converted to **Markdown syntax**—already perfectly styled for a `README.md` file on GitHub. You can copy-paste this directly:
-
-````markdown
 # 🌌 Nebula Notebook: A Multi-Modal Data Visualization Playground
 
 > *“Where computation meets chaos, and patterns emerge in living color.”*
