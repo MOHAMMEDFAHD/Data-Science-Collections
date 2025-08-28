@@ -68,7 +68,7 @@ npm install
 npm run dev
 ````
 
-Then open [http://localhost:5173](http://localhost:5173) in your browser.
+
 
 ---
 
@@ -79,7 +79,7 @@ Nebula Notebook is built in JavaScript, but you can explore it in **Google Colab
 1. **Embed HTML/JS** directly inside Colab with `IPython.display.HTML`.
 2. **Run a React app in Colab** with a local server + ngrok for public access.
 
-See [Colab Integration Guide](./docs/colab.md) for step-by-step setup.
+
 
 ---
 
